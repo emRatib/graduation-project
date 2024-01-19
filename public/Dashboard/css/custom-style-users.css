@@ -1,0 +1,222 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F8F8F8;
+}
+
+.main-container {
+    display: flex;
+}
+
+.main-container .sidebar {
+    background-color: white;
+    width: 270px;
+    height: 100vh;
+    transition-duration: 500ms;
+    box-shadow: 5px 5px 15px #a59d9d28;
+    z-index: 100000;
+    overflow-y: scroll;
+}
+.main-container .sidebar::-webkit-scrollbar-thumb {
+    background-color: #3B71CA; /* Change to blue or any color you like */
+    border-radius: 10px; /* Adjust the radius to make it more "beautiful" */
+  }
+  .main-container .sidebar:hover::-webkit-scrollbar {
+    opacity: 1; /* Show the scrollbar on hover */
+  }
+  .main-container .sidebar::-webkit-scrollbar {
+    width: 5px; /* Set a width for the scrollbar */
+    margin-right: 10px;
+    height: 100px;
+  }
+
+.main-container .sidebar .header {
+    display: flex;
+    justify-content: baseline;
+    justify-content: space-between;
+    border-bottom: 2px solid #ddd;
+}
+
+.main-container .sidebar .header img {
+    width: 52px;
+    height: 52px;
+}
+
+.main-container .sidebar .header h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3B71CA;
+    font-family: Constantia;
+}
+.main-container .sidebar .header .fa-bars {
+    font-size: 38px;
+    color: #3B71CA;
+}
+
+.main-container .body {
+    flex: 4;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: rgb(238, 238, 238);
+}
+
+.main-container .body .navbar {
+    height: 7vh;
+    color: white;
+    width: 100%;
+    display: flex;
+    background-color: #3B71CA;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: none;
+}
+
+.main-container .body .header {
+    height: 20vh;
+    background-color: #3B71CA;
+}
+
+.main-container .body .header .layer1 {
+    height: 10vh;
+}
+
+.main-container .body .row {
+    background-color: #F8F8F8;
+}
+
+.main-container .body .header .layer2 {
+    height: 10vh;
+    background-color: #2F5AA2;
+}
+
+.main-container .sidebar .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-container .slid {
+    width: 0;
+    overflow: hidden;
+}
+.main-container .fixed {
+    position:fixed;
+}
+.cicle-div{
+    color: #3B71CA;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background-color: white;
+    border-radius: 50%;
+}
+.cicle-div i{
+    color: #3B71CA;
+}
+.active{
+    color: rgb(188, 188, 255);
+}
+#row{
+    background-color: rgba(0, 0, 128, 0);
+}
+.main-color{
+    color: #3B71CA;
+}
+.custom-table table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+}
+.custom-table table thead tr{
+    background-color: #3B71CA;
+    color: white;
+}
+.custom-table table thead tr th{
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.custom-table table tbody tr td{
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+.custom-table table tbody tr td a{
+    color: #3B71CA;
+}
+.custom-table table tbody tr:nth-child(odd){
+    background-color: #F8F8F8;
+}
+.custom-table table tbody tr td button{
+    background-color: #3B71CA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.search-hover {
+    border: 1px solid #ccc;
+    outline: none;
+    background-size: 22px;
+    background-position: 13px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    padding: 25px;
+    transition: all 0.5s;
+  }
+  .search-hover:hover {
+    width: 300px;
+    padding-left: 50px;
+  }
+  .layerUp{
+    background-color: #3B71CA;
+    height: 10vh;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-image: url("../image/layerUp.png");
+    object-fit: cover;
+  }
+  .layerDown{
+    width: 100%;
+    text-align: center;
+    margin-top: -70px;
+    z-index: 10000;
+  }
+  .layerDown img{
+  border: 6px solid #2F5AA2;
+  }
+/*===============================the style media query for tablet=======================================*/
+@media screen and (max-width:768px) {
+    .scrole{
+        overflow-x: scroll;
+    }
+
+}
+
+/*===============================the style media query for mobil=======================================*/
+@media screen and (max-width:600px) {
+    .scrole{
+        overflow-x: scroll;
+    }
+}
+.hide_btn{
+    display: none;
+}
+
