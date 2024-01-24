@@ -20,7 +20,7 @@
 </head>
 
 <body style="background-color: aliceblue">
-
+   
     <!-- this is main navbar -->
     @include('Website/layouts.main-navbar')
 

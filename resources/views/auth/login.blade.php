@@ -58,8 +58,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/ootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/mdb.dark.min.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/bootstrap.min.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/mdb.dark.min.css') }}" /> --}}
     <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/mdb.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/text-holder.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/login-style.css') }}" />
@@ -71,22 +71,9 @@
     <section class="background-radial-gradient overflow-hidden">
         <div class="container px-4  px-md-5 text-center text-lg-start my-5" style="height:87.8vh">
             <div class="row gx-lg-5 align-items-center mb-5">
-                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-                    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                        Diabetes <br />
-                        <span style="color: hsl(218, 81%, 75%)">for controlle your life </span>
-                    </h1>
-                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Temporibus, expedita iusto veniam atque, magni tempora mollitia
-                        dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-                        ab ipsum nisi dolorem modi. Quos?
-                    </p>
-                </div>
+
 
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
@@ -117,14 +104,14 @@
                                 <!-- Administrator Form -->
                                 <div class="tab-pane fade show active" id="admin" role="tabpanel"
                                     aria-labelledby="user-tab">
-                                    <form method="POST" action="{{route('login.admin')}}">
+                                    <form method="POST" action="{{ route('login.admin') }}">
                                         @csrf
                                         <!-- 2 column grid layout with text inputs for the first and last names -->
 
                                         <!-- Email input -->
                                         <div class="form-outline mb-4">
                                             <input id="form3Example3" class="form-control p-2" type="email"
-                                                name="email" value="{{old('email')}}" required autofocus
+                                                name="email" value="{{ old('email') }}" required autofocus
                                                 autocomplete="username" />
                                             <label class="form-label" for="form3Example3">Email address</label>
                                         </div>
@@ -139,6 +126,7 @@
                                             <label class="form-label" for="form3Example4">Password</label>
                                         </div>
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
                                         <div class="d-flex justify-content-between mb-4">
                                             @if (Route::has('password.request'))
                                                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
@@ -186,14 +174,14 @@
                                 <!-- Doctor Form -->
                                 <div class="tab-pane fade" id="doctors" role="tabpanel"
                                     aria-labelledby="admin-tab">
-                                    <form method="POST" action="{{route('login.doctor')}}">
+                                    <form method="POST" action="{{ route('login.doctor') }}">
                                         @csrf
                                         <!-- 2 column grid layout with text inputs for the first and last names -->
 
                                         <!-- Email input -->
                                         <div class="form-outline mb-4">
                                             <input id="form3Example3" class="form-control p-2" type="email"
-                                                name="email" value="{{old('email')}}" required autofocus
+                                                name="email" value="{{ old('email') }}" required autofocus
                                                 autocomplete="username" />
                                             <label class="form-label" for="form3Example3">Email address</label>
                                         </div>
@@ -255,14 +243,14 @@
                                 <!-- Employee Form -->
                                 <div class="tab-pane fade" id="employee" role="tabpanel"
                                     aria-labelledby="employee-tab">
-                                    <form method="POST" action="{{route('login.employee')}}">
+                                    <form method="POST" action="{{ route('login.employee') }}">
                                         @csrf
                                         <!-- 2 column grid layout with text inputs for the first and last names -->
 
                                         <!-- Email input -->
                                         <div class="form-outline mb-4">
                                             <input id="form3Example3" class="form-control p-2" type="email"
-                                                name="email" value="{{old('email')}}" required autofocus
+                                                name="email" value="{{ old('email') }}" required autofocus
                                                 autocomplete="username" />
                                             <label class="form-label" for="form3Example3">Email address</label>
                                         </div>
@@ -325,14 +313,14 @@
                                 <!-- User Form -->
                                 <div class="tab-pane fade" id="user" role="tabpanel"
                                     aria-labelledby="doctors-tab">
-                                    <form method="POST" action="{{route('login.user')}}">
+                                    <form method="POST" action="{{ route('login.user') }}">
                                         @csrf
                                         <!-- 2 column grid layout with text inputs for the first and last names -->
 
                                         <!-- Email input -->
                                         <div class="form-outline mb-4">
                                             <input id="form3Example3" class="form-control p-2" type="email"
-                                                name="email" value="{{old('email')}}" required autofocus
+                                                name="email" value="{{ old('email') }}" required autofocus
                                                 autocomplete="username" />
                                             <label class="form-label" for="form3Example3">Email address</label>
                                         </div>
@@ -406,6 +394,9 @@
                         userTab.show();
                     </script>
 
+                </div>
+                <div class="col-lg-6 mb-5 mb-lg-0 animate" style="z-index: 10">
+                    <img class="animated-image" src="{{ url('Dashboard/img/3d/login.png') }}" alt="">
                 </div>
             </div>
         </div>

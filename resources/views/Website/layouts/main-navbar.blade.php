@@ -3,7 +3,7 @@
       <!-- Container wrapper -->
       <div class="container-fluid">
           <!-- Navbar brand -->
-          <a class="navbar-brand mt-2 mt-lg-0" href="./index.html">
+          <a class="navbar-brand mt-2 mt-lg-0" href="{{route('website.user')}}">
               <h5 class="pt-1">Home</h5>
           </a>
           <!-- Toggle button -->
@@ -17,7 +17,7 @@
               <!-- Left links -->
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                      <a class="nav-link" href="./getstart/index.html">Get Start</a>
+                      <a class="nav-link" href="{{route('getstart.index')}}">Get Start</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="./chat/liveChat.html">Live Chat</a>
@@ -26,7 +26,7 @@
                       <a class="nav-link" href="./blog/blog.html">Blog</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="./report/index.html">Reports</a>
+                      <a class="nav-link" href="{{route('patientdiabetesreport.index')}}">Reports</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="./deitery/deitery.html">Deitary</a>

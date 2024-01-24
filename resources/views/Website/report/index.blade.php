@@ -81,39 +81,65 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid my-3">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" height="320"
-                            width="100%" />
-                        <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                        </a>
+            <!-- reports and progress -->
+            <div class="col-md-6 mt-2">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body text-center">
+                        <div class="mt-3 mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                                class="rounded-circle img-fluid" style="width: 100px;" />
+                        </div>
+                        <h4 class="mb-2">{{ Auth('web')->user()->name }}</h4>
+                        <p class="text-muted mb-4">{{ Auth('web')->user()->phone }} <span class="mx-2">|</span> <a
+                                href="#!">{{ Auth('web')->user()->email }}</a></p>
+
+                        <button type="button" id="submitButton" class="btn btn-primary btn-rounded btn-lg shadow-1">
+                            Check Diabetes
+                        </button>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
+                </div>
+                <div class=" row mt-2">
+                    <div class="col-md-4">
+                        <div class="card p-4 mt-2 ">
+
+                            <p class="mb-2 h5">Diabetes type</p>
+                            <p class="text-muted mb-0">
+                                @if ($PatientDiabetes)
+                                    {{ $PatientDiabetes->diabetes_type }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-4 mt-2 ">
+
+                            <p class="mb-2 h5">Diabetes Duration</p>
+                            <p class="text-muted mb-0">
+                                @if ($PatientDiabetes)
+                                    {{ $PatientDiabetes->created_at }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-4 mt-2 ">
+
+                            <p class="mb-2 h5">Diabetes Status</p>
+                            <p class="text-muted mb-0">
+                                @if ($PatientDiabetes)
+                                    @if ($PatientDiabetes->diabetes_status == 0)
+                                        <strong style="color: blue">You not Diabetes</strong>
+                                    @else
+                                        <strong style="color: red">You Diabetes</strong>
+                                    @endif
+                                @endif
+                        </div>
                         </p>
-                        <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
-                        <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <!-- chart -->
-                <div class="card mt-10">
-                    <div id="chart"></div>
-                </div>
-                <!-- reports and progress -->
-                <div class="mt-3 card p-3">
+                {{-- <div class="card p-3">
                     <p>the progressing of treatment</p>
                     <div class="progress mt-2" style="height: 20px;">
                         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
@@ -127,38 +153,173 @@
                         <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
                             aria-valuemin="0" aria-valuemax="100">75%</div>
                     </div>
+                </div> --}}
+            </div>
+
+            {{-- ("
+            gender": "Female",
+            "age": 60.0,
+            "hypertension": 1,
+            "heart_disease": 0,
+            "smoking_history": "never",
+            "bmi": 28.5,
+            "HbA1c_level": 7.0,
+            "blood_glucose_level": 120
+            ) --}}
+
+            <!-- chart -->
+            <input type="hidden" id="gender" value="{{ $PatientData->gender }}">
+            <input type="hidden" id="age" value="{{ $PatientData->age }}">
+            <input type="hidden" id="hypertension" value="{{ $PatientData->hypertension }}">
+            <input type="hidden" id="heart_disease" value="{{ $PatientData->heart_disease }}">
+            <input type="hidden" id="smoking_history" value="{{ $PatientData->smoking_history }}">
+            <input type="hidden" id="bmi" value="{{ $PatientData->bmi }}">
+            <input type="hidden" id="HbA1c_level" value="{{ $PatientData->HbA1c_level }}">
+            <input type="hidden" id="blood_glucose_level" value="{{ $PatientData->blood_glucose_level }}">
+
+            <div class="col-md-6 mt-2 p-1">
+                <div class="card-body card">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Age</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">
+                                @if ($PatientData)
+                                    {{ $PatientData->age }}
+                                @endif
+                                Years Old
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Hypertension</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">
+                                @if ($PatientData)
+                                    {{ $PatientData->hypertension }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Heart Disease</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">
+                                @if ($PatientData)
+                                    {{ $PatientData->heart_disease }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Smoking History</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">
+                                @if ($PatientData)
+                                    {{ $PatientData->smoking_history }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.1s">
+                            <p class="mb-0">HbA1c Level</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">
+                                @if ($PatientData)
+                                    {{ $PatientData->HbA1c_level }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.1s">
+                            <p class="mb-0">Blood Glucose Level</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">
+                                @if ($PatientData)
+                                    {{ $PatientData->blood_glucose_level }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.1s">
+                            <p class="mb-0">BMI</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">
+                                @if ($PatientData)
+                                    {{ $PatientData->bmi }}
+                                @endif
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                {{-- <div class="card p-2" id="chart"></div> --}}
             </div>
         </div>
-        <div class="container-fluid mt-3">
-            <div class="row gx-lg-5">
-                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <!-- News block -->
-                    <div class="card">
-                        <div id="frost-chart"></div>
-                    </div>
-                    <!-- News block -->
-                </div>
 
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                    <!-- News block -->
-                    <div class="card">
-                        <div>
-                            <canvas id="myChart" height="270px"></canvas>
-                        </div>
-                        <p class="text-muted mt-2">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </p>
-                    </div>
-                    <!-- News block -->
-                </div>
+        <div class="row">
 
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                    <!-- News block -->
-                    <div class="card">
-                        <canvas id="myChart2"> </canvas>
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 mt-3">
+                <!-- News block -->
+                <div class="card">
+                    <div id="frost-chart"></div>
+                </div>
+                <!-- News block -->
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 mt-3">
+                <!-- News block -->
+                <div class="card">
+                    <div>
+                        <canvas id="myChart" height="270px"></canvas>
                     </div>
-                    <!-- News block -->
+                    <p class="text-muted mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing.
+                    </p>
+                </div>
+                <!-- News block -->
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 mt-3">
+                <!-- News block -->
+                <div class="card">
+                    <canvas id="myChart2"> </canvas>
+                </div>
+                <!-- News block -->
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Request Status</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="responseMessage">...</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,6 +329,85 @@
 @push('js')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ url('Website/charts/charts.js') }}"></script>
+    <script src="{{ url('Website/charts/frost-chart.js') }}"></script>
     <script src="{{ url('Website/charts/charts2.js') }}"></script>
     <script src="{{ url('Website/charts/charts3.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Get values from hidden input fields
+            var gender = $('#gender').val();
+            var age = $('#age').val();
+            var hypertension = $('#hypertension').val();
+            var heartDisease = $('#heart_disease').val();
+            var smokingHistory = $('#smoking_history').val();
+            var bmi = $('#bmi').val();
+            var hba1cLevel = $('#HbA1c_level').val();
+            var bloodGlucoseLevel = $('#blood_glucose_level').val();
+
+            // Data to be sent in the request
+            var requestData = {
+                "gender": gender,
+                "age": parseInt(age),
+                "hypertension": parseInt(hypertension),
+                "heart_disease": parseInt(heartDisease),
+                "smoking_history": smokingHistory,
+                "bmi": parseInt(bmi),
+                "HbA1c_level": parseInt(hba1cLevel),
+                "blood_glucose_level": parseInt(bloodGlucoseLevel)
+            };
+
+            $('#submitButton').click(function() {
+
+                $(this).prop('disabled', true).html(
+                    '<i class="fa fa-spinner fa-spin"></i> Loading...');
+
+                // Make the POST request
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1:5000/predict_diabetes',
+                    contentType: 'application/json', // Set the Content-Type header to JSON
+                    data: JSON.stringify(requestData), // Convert the data to JSON string
+                    success: function(response) {
+                        // Handle the success response
+                        console.log(response.prediction);
+                        // $('#responseMessage').html('<div class="alert alert-success">' +
+                        //     response.message + '</div>');
+                        patientdiabetesreport(response.prediction);
+                    },
+                    error: function(error) {
+                        // Handle the error response
+                        console.error(error);
+                        $('#responseMessage').html('<div class="alert alert-success">' +
+                            error.responseText + '</div>');
+                    },
+                    complete: function() {
+                        // Enable the submit button and restore its original text
+                        $('#submitButton').prop('disabled', false).html('Submited Done');
+                        // $('#exampleModal').modal('show');
+                    },
+
+                });
+            });
+
+            function patientdiabetesreport(status) {
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ route('patientdiabetesreport.store') }}',
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        diabetes_status: status,
+                        diabetes_type: 'Diabetes 1',
+                        user_id: "{{ Auth('web')->user()->id }}",
+                    }
+                }).done(function(response) {
+                    console.log(response);
+                    $('#exampleModal').modal('show');
+                    $('#responseMessage').html(response.message);
+
+                });
+            }
+
+        });
+    </script>
 @endpush

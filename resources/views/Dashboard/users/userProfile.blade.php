@@ -30,7 +30,7 @@
 
                     </div>
                     <div class="layerDown">
-                        <img width="150" class="rounded-circle" src="{{url('Dashboard/image/ahmed.png')}}" alt="">
+                        <img width="150" class="rounded-circle" src="{{url('Dashboard/img/profile/ahmed.png')}}" alt="">
                         <h5 class="main-color">ahmed hssan</h5>
                         <p class="main-color">uyu36565@gmail.com</p>
                         <p class="main-color">doctor</p>

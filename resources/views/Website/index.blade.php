@@ -83,11 +83,11 @@
 @endsection
 
 @section('content')
-    <!-- Carousel wrapper -->
-    <section class="wrapper">
+    <!-- Carousels wrapper -->
+    {{-- <section class="wrapper">
         <i class="fa-solid fa-arrow-left button" id="prev"></i>
         <div class="image-container">
-            <div class="carousel">
+            <div class="carousels">
                 <div class="img">
                     <img src="{{ url('Website/img/pannel1.png') }}" alt="" />
                     <h3>image 1</h3>
@@ -111,11 +111,62 @@
             </div>
             <i class="fa-solid fa-arrow-right button" id="next"></i>
         </div>
-    </section>
+    </section> --}}
+    <!-- Carousel wrapper -->
+    <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+        <!-- Indicators -->
+        {{-- <div class="carousel-indicators">
+            <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div> --}}
+
+        <!-- Inner -->
+        <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+                <img src="{{ url('Dashboard/img/pannels/slide1.png') }}" style="height: 500px" class="d-block w-100"
+                    alt="Sunset Over the City" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p class="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(18).webp" style="height: 500px"
+                    class="d-block w-100" alt="Sunset Over the City" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p class="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(33).webp" style="height: 500px"
+                    class="d-block w-100" alt="Sunset Over the City" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p class="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Inner -->
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+            <i class="fa-solid fa-arrow-left card p-3 rounded-circle" id="prev"></i>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+            <i class="fa-solid fa-arrow-right card p-3 rounded-circle" id="next"></i>
+        </button>
+    </div>
+    <!-- Carousel wrapper -->
     <div class="container">
         <div class="row col-md-12 mt-5 mb-5">
-            <div class="col-md-3">
-                <div class="row card">
+            <div class="col-md-3 ">
+                <div class="row card ">
                     <ul class="list-group list-group-light">
                         <li class="list-group-item px-3 border-0">
                             Type 1 diabetes is also called childhood diabetes and is an
@@ -341,5 +392,28 @@
 @endsection
 
 @push('js')
-    {{-- <script src="{{url('Dashboard/js/chart.js')}}"></script> --}}
+    <script src="{{ url('Website/js/slider.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('select[name="Section"]').on('change', function() {
+                var SectionId = $(this).val();
+                if (SectionId) {
+                    $.ajax({
+                        url: "{{ URL::to('section') }}/" + SectionId,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('select[name="product"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="product"]').append('<option value="' +
+                                    value + '">' + value + '</option>');
+                            });
+                        },
+                    });
+                } else {
+                    console.log('AJAX load did not work');
+                }
+            });
+        });
+    </script>
 @endpush

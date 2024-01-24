@@ -62,9 +62,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/mdb.dark.min.css" />
-    <link rel="stylesheet" href="../css/mdb.min.css" />
+    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/bootstrap.min.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/mdb.dark.min.css') }}" /> --}}
+    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/mdb.min.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/text-holder.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/login-style.css') }}" />
 </head>
 
 <body>
@@ -90,8 +92,7 @@
             <div class="card-body py-5 px-md-5">
 
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-3"></div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 border-right p-3">
                         <h2 class="fw-bold mb-5">Sign up now</h2>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
@@ -173,7 +174,9 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6 animate">
+                    <img class="animated-image"  src="{{ url('Dashboard/img/3d/register.png') }}" alt="" style="width:500px">
+                    </div>
                 </div>
             </div>
         </div>
