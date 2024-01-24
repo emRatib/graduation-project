@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Website\WebsiteController;
+use App\Http\Controllers\Website\PatientDataController;
+use App\Http\Controllers\Website\PatientDiabetesController;
 
 
 /*
@@ -22,6 +24,8 @@ Route::get('/', function () {
 
 Route::middleware('auth:web')->group(function(){
     Route::get('/website/user', [WebsiteController::class, 'index'])->name('website.user');
+    Route::resource('getstart',PatientDataController::class);
+    Route::resource('patientdiabetesreport',PatientDiabetesController::class);
 });
 
 Route::middleware('auth')->group(function () {
