@@ -9,7 +9,7 @@ class WebsiteController extends Controller
 {
     public function index(){
 
-        return view('Website.Appointment.index');
+        return view('Website.index');
 
     }
 }
