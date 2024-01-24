@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             EmployeeSeeder::class,
             UserTableSeeder::class,
             SettingTableSeeder::class,
+            PatientDataSeeder::class,
             //AppointmentSeeder::class,
             // SectionTableSeeder::class,
             // ImageTableSeeder::class,
