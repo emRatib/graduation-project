@@ -1,0 +1,7 @@
+src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(18).webp"
+5)-php artisan make:model -mcsfR
+
+php artisan make:notification EmailContact
+
+php artisan config:cache
+
