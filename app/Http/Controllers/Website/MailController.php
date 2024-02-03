@@ -20,20 +20,18 @@ class MailController extends Controller
         $email = $request->input('email');
         $subject = $request->input('subject');
         $messageBody = $request->input('message');
-        $body = $request->input('message');
 
         // return response()->json(['success' => false, 'message' => $request->all()]);
         try {
             // Send email
-            Mail::to('recipient@gmail.com')->send(new MyMail($name, $subject, $email, $messageBody));
+            Mail::to('uyu365666@gmail.com')->send(new MyMail($name, $subject, $email, $messageBody));
 
             return response()->json(['success' => true, 'message' => 'Email sent successfully']);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => 'Error sending email. Please try again']);
         }
 
-        // $user = User::first();
-        // Notification::send($user, new EmailContact($name, $subject, $email, $messageBody));
+     
     }
 
 

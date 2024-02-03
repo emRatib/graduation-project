@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PatientData;
-
+use App\Http\Resources\PatientDataResource;
 
 class PatientDataController extends Controller
 {
@@ -13,6 +13,7 @@ class PatientDataController extends Controller
     public function index()
     {
         $patientdata = PatientData::all();
+        // $patientdata = PatientDataResource::collection(PatientData::all());
         return response()->json([
             'status' => true,
             'message'=>'patient data',
@@ -36,6 +37,7 @@ class PatientDataController extends Controller
     public function show($id)
     {
         $patientdata = PatientData::find($id);
+        // $patientdata = new PatientDataResource(PatientData::find($id));
         return response()->json([
             'status' => true,
             'message'=>'patient data founded',
@@ -68,5 +70,5 @@ class PatientDataController extends Controller
             'data' => $patientdata
         ]);
     }
-    
+
 }

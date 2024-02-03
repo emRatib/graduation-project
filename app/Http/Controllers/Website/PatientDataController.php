@@ -5,9 +5,14 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePatientDataRequest;
 use Illuminate\Http\Request;
-
+use App\Models\User;
 use App\Models\PatientDiabetes;
 use App\Models\PatientData;
+
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\EmailContact;
+
+
 
 class PatientDataController extends Controller
 {
@@ -22,9 +27,9 @@ class PatientDataController extends Controller
         $PatientData = PatientData::where('user_id',$id)->first();
         $PatientDiabetes = PatientDiabetes::where('user_id', $id)->first();
 
-        if ($PatientData) {
-            return view('Website.report.index',compact('PatientData','PatientDiabetes'));
-        }
+        // if ($PatientData) {
+        //     return view('Website.report.index',compact('PatientData','PatientDiabetes'));
+        // }
         return view('Website.getstart.index');
     }
 
@@ -47,7 +52,13 @@ class PatientDataController extends Controller
     public function store(StorePatientDataRequest $request)
     {
         PatientData::create($request->all());
-        return response()->json(['message' => 'Patient data added successfully']);
+
+        $data_id = PatientData::latest()->first()->id;
+
+        $user = user::first();
+        Notification::send($user, new EmailContact($data_id));
+
+        return response()->json(['message' => 'Patient data added successfully add email sent']);
     }
 
     /**

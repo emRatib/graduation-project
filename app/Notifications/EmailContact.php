@@ -10,11 +10,7 @@ use Illuminate\Notifications\Notification;
 class EmailContact extends Notification
 {
     use Queueable;
-
-    private $name;
-    private $subject;
-    private $email;
-    private $messageContent;
+    private $date_id;
 
     /**
      * Create a new notification instance.
@@ -22,14 +18,10 @@ class EmailContact extends Notification
      * @return void
      */
 
-    public function __construct($name, $subject, $email ,$messageContent)
+    public function __construct($date_id)
     {
-        $this->name = $name;
-        $this->subject = $subject;
-        $this->email = $email;
-        $this->messageContent = $messageContent;
+        $this->date_id = $date_id;
     }
-
 
     /**
      * Get the notification's delivery channels.
@@ -37,6 +29,7 @@ class EmailContact extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
+
     public function via($notifiable)
     {
         return ['mail'];
@@ -48,14 +41,16 @@ class EmailContact extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
+
     public function toMail($notifiable)
     {
-        $url = `http://127.0.0.1:8000/website/user/contact`.$this->name;
+        $url = 'http://127.0.0.1:8000/patientdiabetesreport'.$this->date_id;
         return (new MailMessage)
-                    ->subject($this->subject)
-                    ->line($this->messageContent)
-                    ->action('Return To Website', $url)
-                    ->line('Thank you for using our Salamtic Diabetes!');
+            ->greeting('Hello!')
+            ->subject('add new Data')
+            ->line('you add new Data Of Diabetes')
+            ->action('Display Data',$url)
+            ->line('Thank you for using our Salamtuk app !');
     }
 
     /**
@@ -64,6 +59,7 @@ class EmailContact extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
+
     public function toArray($notifiable)
     {
         return [

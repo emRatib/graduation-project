@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 
-use App\Models\setting;
-use Illuminate\Http\Request;
+use App\Models\Chat;
+use App\Http\Requests\StoreChatRequest;
+use App\Http\Requests\UpdateChatRequest;
 
-class SettingController extends Controller
+class ChatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.Settings.index');
+        return view('Website.chat.index');
     }
 
     /**
@@ -31,10 +32,10 @@ class SettingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreChatRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreChatRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class SettingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\setting  $setting
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function show(setting $setting)
+    public function show(Chat $chat)
     {
         //
     }
@@ -53,10 +54,10 @@ class SettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\setting  $setting
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function edit(setting $setting)
+    public function edit(Chat $chat)
     {
         //
     }
@@ -64,11 +65,11 @@ class SettingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\setting  $setting
+     * @param  \App\Http\Requests\UpdateChatRequest  $request
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, setting $setting)
+    public function update(UpdateChatRequest $request, Chat $chat)
     {
         //
     }
@@ -76,10 +77,10 @@ class SettingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\setting  $setting
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(setting $setting)
+    public function destroy(Chat $chat)
     {
         //
     }
