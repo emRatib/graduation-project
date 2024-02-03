@@ -49,10 +49,10 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
-                                <h5>
+                                <h6>
                                     <a href="./index.html">Website</a> /
                                     <a href="./index.html">Reports</a>
-                                </h5>
+                                </h6>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-7">

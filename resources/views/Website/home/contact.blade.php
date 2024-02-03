@@ -96,7 +96,7 @@
         <div class="carousel-inner">
             <!-- Single item -->
             <div class="carousel-item active">
-                <img src="{{ url('Dashboard/img/pannels/slide1.png') }}" style="height: 500px" class="d-block w-100"
+                <img src="{{ url('Dashboard/img/pannels/contact1.png') }}" style="height: 500px" class="d-block w-100"
                     alt="Sunset Over the City" />
                 <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
@@ -104,7 +104,7 @@
                 </div>
             </div>
             <div class="carousel-item active">
-                <img src="{{ url('Dashboard/img/pannels/slide2.png') }}" style="height: 500px" class="d-block w-100"
+                <img src="{{ url('Dashboard/img/pannels/contact3.png') }}" style="height: 500px" class="d-block w-100"
                     alt="Sunset Over the City" />
                 <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="carousel-item active">
-                <img src="{{ url('Dashboard/img/pannels/slide3.png') }}" style="height: 500px" class="d-block w-100"
+                <img src="{{ url('Dashboard/img/pannels/contact2.png') }}" style="height: 500px" class="d-block w-100"
                     alt="Sunset Over the City" />
                 <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
@@ -252,7 +252,7 @@
 @endsection
 
 @push('js')
-    <script src="{{ url('Website/js/slider.js') }}"></script>
+    {{-- <script src="{{ url('Website/js/slider.js') }}"></script> --}}
 
     <!-- Add this script to your Blade file or in a separate JavaScript file -->
     <script>

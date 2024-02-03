@@ -48,9 +48,9 @@
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
                                 <h6>
-                                    <a href="{{route('website.user')}}">Website / </a>
-                                    <a href="{{route('website.user')}}">Users /</a>
-                                    <a href="{{route('website.user')}}">Home</a>
+                                    <a href="{{ route('website.user') }}">Website / </a>
+                                    <a href="{{ route('website.user') }}">Users /</a>
+                                    <a href="{{ route('website.user') }}">Home</a>
                                 </h6>
                             </div>
                         </div>
@@ -58,9 +58,9 @@
                             <div class="main-menu d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="{{route('website.user')}}">Home</a></li>
-                                        <li><a href="{{route('website.user.medicalinfo')}}">Medical Info</a></li>
-                                        <li><a href="{{route('website.user.contact')}}">Contact</a></li>
+                                        <li><a class="active" href="{{ route('website.user') }}">Home</a></li>
+                                        <li><a href="{{ route('website.user.medicalinfo') }}">Medical Info</a></li>
+                                        <li><a href="{{ route('website.user.contact') }}">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -84,14 +84,14 @@
     <!-- slider_area_start -->
     <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
         <!-- Indicators -->
-        {{-- <div class="carousel-indicators">
+        <div class="carousel-indicators">
             <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"
                 aria-label="Slide 2"></button>
             <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"
                 aria-label="Slide 3"></button>
-        </div> --}}
+        </div>
 
         <!-- Inner -->
         <div class="carousel-inner">
@@ -100,24 +100,28 @@
                 <img src="{{ url('Dashboard/img/pannels/slide1.png') }}" style="height: 500px" class="d-block w-100"
                     alt="Sunset Over the City" />
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p class="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-            <div class="carousel-item active">
-                <img src="{{ url('Dashboard/img/pannels/slide2.png') }}" style="height: 500px" class="d-block w-100"
-                    alt="Sunset Over the City" />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p class="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5>Inslin Recommendation</h5>
+                    <p class="text-white">by using machine learning to recommend the best insulin dose for the patient diam
+                        sed stet.</p>
                 </div>
             </div>
             <div class="carousel-item active">
                 <img src="{{ url('Dashboard/img/pannels/slide3.png') }}" style="height: 500px" class="d-block w-100"
                     alt="Sunset Over the City" />
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p class="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5>Detect Diabetes</h5>
+                    <p class="text-white">by using machine learning algorismes to classify if the patient have diabetes or
+                        not diam sed stet.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img src="{{ url('Dashboard/img/pannels/slide2.png') }}" style="height: 500px" class="d-block w-100"
+                    alt="Sunset Over the City" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Doctors Appointments</h5>
+                    <p class="text-white">by providing a system to allow the patient to book an appointment with the doctor
+                        diam sed stet.</p>
                 </div>
             </div>
         </div>
@@ -188,7 +192,8 @@
                             <i class="fa fa-heartbeat text-primary fs-4"></i>
                         </div>
                         <h4 class="mb-3">Detect Diabetes</h4>
-                        <p class="mb-4">by using machine learning algorismes to classify if the patient have diabetes or not
+                        <p class="mb-4">by using machine learning algorismes to classify if the patient have diabetes or
+                            not
                             diam sed stet.</p>
                         <a class="btn btn-outline-primary btn-rounded" href=""><i
                                 class="fa fa-plus text-primary me-3"></i>Read More</a>
@@ -240,7 +245,8 @@
                             <i class="fa fa-tooth text-primary fs-4"></i>
                         </div>
                         <h4 class="mb-3">Support Community</h4>
-                        <p class="mb-4">by adding live chat system and medical blog to add medical posts and allow the interactive between them
+                        <p class="mb-4">by adding live chat system and medical blog to add medical posts and allow the
+                            interactive between them
                             diam sed stet.</p>
                         <a class="btn btn-outline-primary btn-rounded" href=""><i
                                 class="fa fa-plus text-primary me-3"></i>Read More</a>

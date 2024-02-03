@@ -48,14 +48,13 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
-                                <h5><a href="../index.html">Website</a> / <a href="./index.html">Getstart</a></h5>
+                                <h6><a href="../index.html">Website</a> / <a href="./index.html">Getstart</a></h6>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-7">
                             <div class="main-menu  d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="#index.html">home</a></li>
                                         <li><a href="#Doctors.html">More Info</a></li>
                                         <li><a href="#about.html">Policy</a></li>
                                     </ul>
@@ -291,7 +290,8 @@
                                 </span>
                             </li>
                             <li>
-                                Underweight: BMI less than 18.5 Normal weight:<br> BMI between 18.5 and 24.9 Overweight:<br> BMI
+                                Underweight: BMI less than 18.5 Normal weight:<br> BMI between 18.5 and 24.9 Overweight:<br>
+                                BMI
                                 between 25 and 29.9 Obesity:<br> BMI of 30 or greater
                             </li>
                         </ul>

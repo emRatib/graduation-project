@@ -628,7 +628,7 @@
 @endsection
 
 @push('js')
-    <script src="{{ url('Website/js/slider.js') }}"></script>
+    {{-- <script src="{{ url('Website/js/slider.js') }}"></script> --}}
     <script>
         $(document).ready(function() {
             $('select[name="Section"]').on('change', function() {
