@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Doctor;
+use App\Models\Section;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -22,7 +23,7 @@ class DoctorSeeder extends Seeder
             'name' => 'adel ali',
             'email' => 'uyu365555@gmail.com',
             'password' => Hash::make('adel12345'),
-            'image_path' => 'profile.png',
+            'section_id' => Section::all()->random()->id,
             'status' => 'active',
             'phone' => '01000000000',
             'speciality' => 'surgery',

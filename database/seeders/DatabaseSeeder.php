@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AdminTableSeeder::class,
+            SectionSeeder::class,
             DoctorSeeder::class,
             EmployeeSeeder::class,
             UserTableSeeder::class,
             SettingTableSeeder::class,
             PatientDataSeeder::class,
-            //AppointmentSeeder::class,
-            // SectionTableSeeder::class,
-            // ImageTableSeeder::class,
+            AppointmentSeeder::class,
+            ImageTableSeeder::class,
             // PatientTableSeeder::class,
             // RayEmployeeTableSeeder::class,
             // ServiceTableSeeder::class,
