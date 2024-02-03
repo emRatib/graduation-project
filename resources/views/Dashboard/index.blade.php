@@ -18,7 +18,7 @@
         <div class="layer2">
             <div class="container-fluid d-flex align-items-center justify-content-center">
                 <div class="row col-md-12" style="background-color:rgba(137, 43, 226, 0);margin-top: -100px;">
-                    <div class="col-md-4 p-5">
+                    <div class="col-md-4 p-4">
                         <div class="card p-3 d-flex">
                             <div class="d-flex align-items-center justify-content-around">
                                 <div class="card d-flex align-items-center justify-content-center p-4"
@@ -34,7 +34,7 @@
                             50%
                         </div>
                     </div>
-                    <div class="col-md-4 p-5">
+                    <div class="col-md-4 p-4">
                         <div class="card p-3 d-flex">
                             <div class="d-flex align-items-center justify-content-around">
                                 <div class="card d-flex align-items-center justify-content-center p-4"
@@ -50,7 +50,7 @@
                             50%
                         </div>
                     </div>
-                    <div class="col-md-4 p-5">
+                    <div class="col-md-4 p-4">
                         <div class="card p-3 d-flex">
                             <div class="d-flex align-items-center justify-content-around">
                                 <div class="card d-flex align-items-center justify-content-center p-4"

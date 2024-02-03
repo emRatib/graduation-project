@@ -6,30 +6,53 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="./index.html">
+            <a href="{{route('dashboard.admin')}}">
                 <i class='bx bx-grid-alt'></i>
                 <span class="link_name">Dashboard</span>
             </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="./index.html">Services</a></li>
+        </li>
+        <li class="">
+            <div class="iocn-link">
+                <a role="button">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <span class="link_name">Sections</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                {{-- <li><a class="link_name" href="#">Services</a></li> --}}
+                <li><a href="{{route('section.index')}}">view all sections</a></li>
             </ul>
         </li>
         <li class="">
             <div class="iocn-link">
-                <a href="#">
+                <a role="button">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <span class="link_name">Doctors</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                {{-- <li><a class="link_name" href="#">Services</a></li> --}}
+                <li><a href="{{route('Doctors.index')}}">view all Doctors</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <div class="iocn-link">
+                <a role="button">
                     <i class="fa-solid fa-sitemap"></i>
                     <span class="link_name">Services</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="#">Services</a></li>
+                {{-- <li><a class="link_name" href="#">Services</a></li> --}}
                 <li><a href="./services/allServices.html">all Services</a></li>
             </ul>
         </li>
         <li>
             <div class="iocn-link">
-                <a href="#">
+                <a role="button">
                     <i class="fa-regular fa-file-lines"></i>
                     <span class="link_name">Report</span>
                 </a>
@@ -43,7 +66,7 @@
         </li>
         <li>
             <div class="iocn-link">
-                <a href="#">
+                <a role="button">
                     <i class="fa-solid fa-users"></i>
                     <span class="link_name">Users</span>
                 </a>
@@ -58,7 +81,7 @@
             </ul>
         </li>
         <li>
-            <a href="./settings/setings.html">
+            <a href="{{route('setting.index')}}">
                 <i class="fa-solid fa-gear"></i>
                 <span class="link_name">Setting</span>
             </a>
@@ -68,9 +91,6 @@
                 <i class='bx bx-message-square-detail'></i>
                 <span class="link_name">Empty Page</span>
             </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="./settings/setings.html">Setting</a></li>
-            </ul>
         </li>
     </ul>
 </div>

@@ -1,9 +1,5 @@
 <!-- Footer opened -->
-<div class="">
-    <div class="container-fluid d-flex align-items-center justify-content-center">
-      <div class="row col-md-12  p-3 card text-center" style="background-color: white;">
-        all right &copy; are saved
-      </div>
-    </div>
-  </div>
+<div class="mx-5 p-5 card text-center">
+    all right &copy; are saved
+</div>
 <!-- Footer closed -->

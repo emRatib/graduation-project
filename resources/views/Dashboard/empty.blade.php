@@ -10,6 +10,7 @@
 
 
 @push('css')
+    <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/custom-style.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('Dashboard/css/custom-style-settings.css') }}" />
 @endpush
 
@@ -22,8 +23,8 @@
 @endsection
 
 @section('content')
-    <div class="p-3">
-        <div class="container-fluid d-flex align-items-center justify-content-center card p-2" style="margin-top: -70px">
+    <div class="mx-5 my-3">
+        <div class="card p-2" style="margin-top: -70px">
             <!-- write your content here -->
             <h1>Empty</h1>
         </div>
@@ -31,8 +32,5 @@
 @endsection
 
 @push('js')
-    <!-- chart file -->
-    <script src="{{ url('Dashboard/js/chart.js') }}"></script>
-    <!-- frost chart file -->
-    <script src="{{ url('Dashboard/js/frost_chart.js') }}"></script>
+   
 @endpush
